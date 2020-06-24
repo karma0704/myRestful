@@ -3,6 +3,7 @@ from rest_app01.views import school
 from rest_app01.views import school_v1
 from rest_app01.views import school_v2
 from rest_app01.views import school_v3
+from rest_app01.views.account.account import LoginView
 
 
 
@@ -26,4 +27,5 @@ urlpatterns = [
             'put': 'update', 
             'delete': 'destroy'
         }), name='schoolDetail_v3'),
+    path('user/login', LoginView.as_view(), name='login'),
 ]

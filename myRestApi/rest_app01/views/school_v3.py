@@ -14,5 +14,5 @@ rest_framework开发接口v1.2.0版本
 class SchoolViewSet(ModelViewSet):
     # queryset类型的数据集
     queryset = School.objects.all()
-    # queryset类型数据序列化成
+    # queryset类型数据序列化
     serializer_class = SchoolSerializer

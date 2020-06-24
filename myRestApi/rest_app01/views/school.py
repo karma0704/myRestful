@@ -3,19 +3,25 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_app01.models.school import School
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, reverse
+from rest_app01.authentication.user_auth import LoginAuth
+from rest_framework import permissions
 
 
 """
 rest_framework开发接口v1.0.0版本
 开发我们的Web API的首要任务就是为我们的Web API提供一种将代码片段实例序列化和反序列化为诸如json之类的表示形式的方式。
-我们可以通过声明与Django forms非常相似的序列化器（serializers）来实现。
+我们可以通过声明与django.forms非常相似的序列化组件（serializers）来实现。
 导入序列化组件：from rest_app01.serializer.serializer import SchoolSerializer
 
 """
 
 
 class SchoolListView(APIView):
+    """
+    局部视图认证: 再需要进行认证的类视图中添加一个变量名称为authentication_classes的视图认证类列表
+    """
+    authentication_classes = [LoginAuth, ]
+
     def get(self, request, *args, **kwargs):
         """
         查询学校列表接口
@@ -39,6 +45,8 @@ class SchoolListView(APIView):
 
          
 class SchoolDetailView(APIView):
+    authentication_classes = [LoginAuth, ]
+
     def get(self, request, pk, *args, **kwargs):
         """
         查询指定学校列表接口

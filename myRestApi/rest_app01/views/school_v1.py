@@ -1,10 +1,7 @@
 from rest_app01.serializer.serializer import SchoolSerializer
-from rest_framework.generics import GenericAPIView
-from rest_framework.response import Response
 from rest_app01.models.school import School
-from django.http import HttpResponse
-from django.shortcuts import render, redirect, reverse
 from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
+from rest_framework.generics import GenericAPIView
 
 """
 rest_framework开发接口v1.1.0版本

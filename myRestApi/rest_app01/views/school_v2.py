@@ -1,6 +1,6 @@
 from rest_app01.serializer.serializer import SchoolSerializer
 from rest_app01.models.school import School
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, DestroyAPIView
 
 
 """
