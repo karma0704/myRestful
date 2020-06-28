@@ -1,10 +1,24 @@
-from django.urls import path
+from django.urls import path, include
 from rest_app01.views import school
 from rest_app01.views import school_v1
 from rest_app01.views import school_v2
 from rest_app01.views import school_v3
 from rest_app01.views.account.account import LoginView
+# import django.contrib.auth.middleware.AuthenticationMiddleware
+from rest_framework import routers
 
+"""
+全自动路由控制
+"""
+
+# 生成router对象
+# router=routers.DefaultRouter()
+
+# 需要传两个参数,第一个参数就是匹配的路径,第二个参数,是视图类
+# router.register('publish',school_v3.SchoolViewSet)
+
+# path('', include(router.urls)),
+# 自动生成四个路由(SchoolViewSet必须继承ModelViewSet)
 
 
 urlpatterns = [
