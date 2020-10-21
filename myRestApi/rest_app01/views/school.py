@@ -3,9 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_app01.models.school import School
 from django.http import HttpResponse
-from rest_app01.authentication.user_auth import LoginAuth
-from rest_framework import permissions
-
+from authentication.user_auth import LoginAuth
 
 """
 rest_framework开发接口v1.0.0版本
